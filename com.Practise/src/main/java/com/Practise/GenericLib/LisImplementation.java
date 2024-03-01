@@ -7,7 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.events.EventFiringDecorator;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -63,7 +63,7 @@ public class LisImplementation implements ITestListener {
 			
 			
 			TakesScreenshot ts = (TakesScreenshot)driver;
-			File src =ts.getScreenshotAs(OutputType.FILE);
+			File src = ts.getScreenshotAs(OutputType.FILE);
 			File desn = new File("./screenshot/"+methodName+".PNG");
 			FileUtils.copyFile(src, desn);
 			System.out.println("Screen shot captured for Test:"+methodName);
